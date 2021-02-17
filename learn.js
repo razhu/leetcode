@@ -1,44 +1,56 @@
-class Node {
-    constructor(data, next = null) {
-        this.data = data;
-        this.next = next;
+// program to display fibonacci sequence using recursion
+function fibonacci(num) {
+    if(num < 2) {
+        return num;
     }
-}
-const n1 = new Node(100)
-// console.log(n1);
-
-class LinkedList {
-    constructor() {
-        this.head = null
-        this.size = 0
-    }
-    // Insert first node
-    insertFirst(data) {
-        this.head = new Node(data, this.head)
-    }
-    // Insert last node
-    
-    // Insert at index
-    
-    // Remove at index
-    
-    // Insert first node
-    
-    // Clear list
-    
-    // Print list data
-    printListData() {
-        let current = this.head
-        while (current){
-            console.log(current.data);
-            current = current.next
-        }
+    else {
+        return fibonacci(num-1) + fibonacci(num - 2);
     }
 }
 
-const ll = new LinkedList()
-ll.insertFirst(200)
-ll.insertFirst(300)
-ll.insertFirst(400)
-ll.printListData()
+console.log('xxx ', fibonacci(7));
+
+// class Node {
+//     constructor(data, next = null) {
+//         this.data = data;
+//         this.next = next;
+//     }
+// }
+// const n1 = new Node(100)
+// // console.log(n1);
+
+// class LinkedList {
+//     constructor() {
+//         this.head = null
+//         this.size = 0
+//     }
+//     // Insert first node
+//     insertFirst(data) {
+//         this.head = new Node(data, this.head)
+//     }
+//     // Insert last node
+    
+//     // Insert at index
+    
+//     // Remove at index
+    
+//     // Insert first node
+    
+//     // Clear list
+    
+//     // Print list data
+//     printListData() {
+//         let current = this.head
+//         while (current){
+//             console.log(current.data);
+//             current = current.next
+//         }
+//     }
+// }
+
+// const ll = new LinkedList()
+// ll.insertFirst(200)
+// ll.insertFirst(300)
+// ll.insertFirst(400)
+// ll.printListData()
 

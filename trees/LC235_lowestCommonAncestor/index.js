@@ -1,3 +1,5 @@
-function lowestCommonAncestor(r, p, q) {}
+function lowestCommonAncestor(r, p, q) {
+    
+}
 
 module.exports = lowestCommonAncestor;
