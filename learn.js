@@ -10,7 +10,7 @@ var isValid = function(s) {
         if (bases[e] !== undefined) {
             stack.push(e)
         } else { // not in the left side...
-            if (bases[e] !== stack.pop()) return false
+            if (bases[stack.pop()] !== e) return false
         }
     }
     return true
