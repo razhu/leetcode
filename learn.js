@@ -7,7 +7,7 @@ var isValid = function(s) {
     let stack = []
     for (let i = 0; i < s.length; i++) {
         const e = s[i];
-        if (bases[e] !== undefined) {
+        if (bases[e]) {
             stack.push(e)
         } else { // not in the left side...
             if (bases[stack.pop()] !== e) return false
