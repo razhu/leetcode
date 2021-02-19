@@ -1,14 +1,34 @@
-// program to display fibonacci sequence using recursion
-function fibonacci(num) {
-    if(num < 2) {
-        return num;
+var isValid = function(s) {
+    const bases = {
+        "[": "]",
+        "(": ")",
+        "{": "}"
     }
-    else {
-        return fibonacci(num-1) + fibonacci(num - 2);
+    let stack = []
+    for (let i = 0; i < s.length; i++) {
+        const e = s[i];
+        if (bases[e] !== undefined) {
+            stack.push(e)
+        } else { // not in the left side...
+            if (bases[e] !== stack.pop()) return false
+        }
     }
-}
+    return true
+};
 
-console.log('xxx ', fibonacci(7));
+console.log('sdss ', isValid('()'));
+
+// program to display fibonacci sequence using recursion
+// function fibonacci(num) {
+//     if(num < 2) {
+//         return num;
+//     }
+//     else {
+//         return fibonacci(num-1) + fibonacci(num - 2);
+//     }
+// }
+
+// console.log('xxx ', fibonacci(7));
 
 // class Node {
 //     constructor(data, next = null) {
@@ -53,4 +73,54 @@ console.log('xxx ', fibonacci(7));
 // ll.insertFirst(300)
 // ll.insertFirst(400)
 // ll.printListData()
+
+// var lengthOfLongestSubstring = function(s) {
+//     let sw = {}
+//     let maxLonInitial = 0
+//     let maxLonUltimo = 0
+
+//     if (s.length === 0) return maxLonInitial
+//     console.log('ssss aqui 1');
+//     if (s.length === 1) return maxLonInitial + 1
+//     console.log('ssss aqui 2');
+//     for (let i = 0; i < s.length; i++) {
+//         const e = s[i];
+//         if (!sw[e]) {
+//             maxLonInitial++
+//         } else {
+//             sw = {}
+//             sw[e] = true
+//             maxLonInitial = 1
+//             maxLonUltimo = Math.max(maxLonInitial, maxLonUltimo)
+//         }
+//         sw[s[e]] = true
+//     }
+//     console.log('ssss aqui 3');
+//     return maxLonUltimo
+// };
+
+// console.log(lengthOfLongestSubstring('abcabcbb'));
+
+// var longestPalindrome = function(s) {
+//     let left = 0
+//     let right = 0
+//     let myp = ''
+//     for (let i = 0; i < s.length; i++) {
+//         const e = s[i];
+//         left -= 1
+//         right += 1
+//         if (s[left] !== s[right]) {
+//             myp = ''
+//             left = i
+//             right = i
+//         } else {
+//             myp = s[left] + s[i] + s[right]
+//         }
+        
+//     }        
+//     return myp
+// };
+
+// console.log(longestPalindrome('babad'));
+
 
